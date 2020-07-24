@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab11</title>
+    <link rel="stylesheet" href="css/lab11.css"/>
+</head>
+<body>
+    <h2>Tabs</h2>
+    <p>Click on the buttons inside the tabled menu</p>
+
+    <div class="tab">
+        <button class="tablinks" onclick="opentabs(event,'Home')">Home</button>
+        <button class="tablinks" onclick="opentabs(event,'Profile')">Profile</button>
+        <button class="tablinks" onclick="opentabs(event,'Message')">Message</button>
+        <button class="tablinks" onclick="opentabs(event,'Setting')">setting</button>
+    </div>
+    <div id="Home" class="tabcontent">
+        <h3>Home</h3>
+        <p>This is Home content</p>
+    </div>
+    <div id="Profile" class="tabcontent">
+        <h3>Profile</h3>
+        <p>This is Profile content</p>
+    </div>
+    <div id="Message" class="tabcontent">
+        <h3>Home</h3>
+        <p>This is Message content</p>
+    </div>
+    <div id="Setting" class="tabcontent">
+        <h3>Home</h3>
+        <p>This is Setting content</p>
+    </div>
+<script >
+    function opentabs(evt, tabsname) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabsname).style.display = "block";
+        evt.currentTarget.className += "active";
+    }
+</script>
+</body>
+</html>
